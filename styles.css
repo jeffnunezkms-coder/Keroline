@@ -1,15 +1,14 @@
 .parent-container {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border: 1px solid blue;
+    /* grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr; */
+    grid-row-gap: 5px;
     grid-template-areas:
-        "header header header header header"
-        "main main main main main"
-        "main main main main main"
-        "main main main main main"
-        "main main main main main"
-        "main main main main main"
-        "footer footer footer footer footer";
+        "header"
+        "main"
+        "main"
+        "footer";
 }
 
 .parent-container > div {
@@ -26,6 +25,17 @@
 #main-content {
     grid-area: main;
     width: 75%;
+    display: grid;
+    border: 1px solid purple;
+    width: 75%;
+    grid-gap: 5px 5px;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#main-content > div.card {
+    border: 1px solid red;
+    border-radius: 12px;
 }
 
 #footer {
