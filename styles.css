@@ -1,44 +1,55 @@
+body {
+    margin: 8px;
+}
+
 .parent-container {
     display: grid;
-    border: 1px solid blue;
+    outline: 1px solid blue;
+    place-items: center;
     /* grid-template-rows: repeat(3, 1fr);
     grid-template-columns: 1fr; */
     grid-row-gap: 5px;
     grid-template-areas:
+        "nav"
         "header"
-        "main"
         "main"
         "footer";
 }
 
-.parent-container > div {
-    border: 1px solid black;
+.parent-container > * {
+    outline: 1px solid black;
     border-radius: 12px;
 }
 
-#header {
-    grid-area: header;
+nav {
+    grid-area: nav;
     height: 100px;
     width: 75%;
 }
 
-#main-content {
+header {
+    grid-area: header;
+    height: 75px;
+    width: 75%;
+}
+
+main {
     grid-area: main;
     width: 75%;
     display: grid;
-    border: 1px solid purple;
+    outline: 1px solid purple;
     width: 75%;
-    grid-gap: 5px 5px;
-    grid-template-rows: repeat(5, 1fr);
-    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 15px 15px;
+    grid-template-rows: repeat(5, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
-#main-content > div.card {
-    border: 1px solid red;
+main > div.card {
+    outline: 1px solid red;
     border-radius: 12px;
 }
 
-#footer {
+footer {
     grid-area: footer;
     height: 200px;
     width: 75%;
