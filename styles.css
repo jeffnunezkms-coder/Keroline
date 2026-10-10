@@ -1,0 +1,35 @@
+.parent-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header header header"
+        "main main main main main"
+        "main main main main main"
+        "main main main main main"
+        "main main main main main"
+        "main main main main main"
+        "footer footer footer footer footer";
+}
+
+.parent-container > div {
+    border: 1px solid black;
+    border-radius: 12px;
+}
+
+#header {
+    grid-area: header;
+    height: 100px;
+    width: 75%;
+}
+
+#main-content {
+    grid-area: main;
+    width: 75%;
+}
+
+#footer {
+    grid-area: footer;
+    height: 200px;
+    width: 75%;
+}
