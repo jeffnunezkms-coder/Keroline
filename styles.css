@@ -1,14 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    margin: 8px;
+    margin: 0px;
+    padding: 8px;
 }
 
 .parent-container {
     display: grid;
     outline: 1px solid blue;
     place-items: center;
-    /* grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: 1fr; */
-    grid-row-gap: 5px;
+    grid-row-gap: 0;
     grid-template-areas:
         "nav"
         "header"
@@ -18,39 +21,57 @@ body {
 
 .parent-container > * {
     outline: 1px solid black;
-    border-radius: 12px;
 }
 
 nav {
     grid-area: nav;
-    height: 100px;
-    width: 75%;
+    height: 75px;
+    width: 100%;
 }
 
 header {
     grid-area: header;
-    height: 75px;
-    width: 75%;
+    height: 200px;
+    width: 100%;
 }
 
 main {
     grid-area: main;
-    width: 75%;
     display: grid;
-    outline: 1px solid purple;
-    width: 75%;
-    grid-gap: 15px 15px;
-    grid-template-rows: repeat(5, 300px);
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    height: auto;
+    width: 100%;
+    padding: 15px;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-main > div.card {
-    outline: 1px solid red;
+main > div {
+    /* outline: 1px solid red; */
     border-radius: 12px;
+    aspect-ratio: 9 /16;
+}
+
+div.card-content {
+    display: grid;
+    outline: 1px solid lightgray;
+    grid-template-rows: 3fr 1fr 1fr;
+
+    border-radius: 12px;
+    background-position: center;
+    background-size: cover;
+}
+
+div.card-content > * {
+    outline: 1px solid black
+}
+
+.dress {
+    border-radius: 12px 12px 0px 0px;
 }
 
 footer {
     grid-area: footer;
-    height: 200px;
-    width: 75%;
+    height: 150px;
+    width: 100%;
 }
